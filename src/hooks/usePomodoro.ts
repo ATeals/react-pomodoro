@@ -37,10 +37,11 @@ export const usePomodoro = (
             if (isRoundReached) {
                 setRound(0);
                 setGoal((goal) => ++goal);
-                if (handleRoundReached) handleRoundReached();
             } else {
                 setRound((round) => ++round);
             }
+
+            if (handleRoundReached) handleRoundReached();
         }
     }, [checkComplete, round, goal, maxGoal, maxRound, handleGoalReached, handleRoundReached, isGoalReached, isRoundReached]);
 

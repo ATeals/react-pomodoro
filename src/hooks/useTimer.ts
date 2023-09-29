@@ -11,7 +11,7 @@ export const useTimer = () => {
 
     const [isTimerRunning, setIsTimerRunning] = useState(false);
 
-    const isComplete = time === 0;
+    const isTimeOut = time === 0;
 
     const timer = useRef(0);
 
@@ -33,10 +33,10 @@ export const useTimer = () => {
     }, [stopTimer, setTime]);
 
     useEffect(() => {
-        if (isComplete) {
+        if (isTimeOut) {
             clearTimer();
         }
-    }, [isComplete, clearTimer]);
+    }, [isTimeOut, clearTimer]);
 
-    return { min, sec, isTimerRunning, startTimer, stopTimer, clearTimer, isComplete };
+    return { min, sec, isTimerRunning, startTimer, stopTimer, clearTimer, isTimeOut };
 };
