@@ -5,7 +5,19 @@ import { usePomodoroComponent } from "./usePomodoroComponent";
 import { Modifier } from "..";
 
 const PomodoroComponent = () => {
-    const { min, sec, isTimerRunning, round, goal, maxGoal, maxRound, isGoalReached, handleReset, handleStart, handleStop } = usePomodoroComponent();
+    const {
+        min, //
+        sec,
+        isTimerRunning,
+        round,
+        goal,
+        maxGoal,
+        maxRound,
+        isGoalReached,
+        handleReset,
+        handleStart,
+        handleStop,
+    } = usePomodoroComponent();
 
     return (
         <>
@@ -129,7 +141,7 @@ const RoundCounter = styled.div`
     }
 `;
 
-const Container = styled.main`
+const Container = styled.section`
     margin: auto;
     width: 680px;
     display: flex;

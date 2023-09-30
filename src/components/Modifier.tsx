@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { ReactNode } from "react";
 import styled from "styled-components";
 
-export const Modifier = ({ children, onClick }: { children: ReactNode; onClick: () => void }) => {
+export const Modifier = ({ children, onClick }: { children: ReactNode; onClick: (e?: React.MouseEvent) => void }) => {
     return (
         <S.Modifier
             onClick={onClick}

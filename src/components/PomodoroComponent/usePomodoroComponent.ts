@@ -1,6 +1,10 @@
 import { usePomodoro, useTimer } from "@/hooks";
 
-export const usePomodoroComponent = () => {
+type Option = {
+    RoundRestart?: boolean;
+};
+
+export const usePomodoroComponent = (option?: Option) => {
     const { min, sec, startTimer, stopTimer, clearTimer, isTimerRunning, isTimeOut } = useTimer();
 
     const { round, goal, maxGoal, maxRound, isGoalReached, clearPomodoro } = usePomodoro(
@@ -10,8 +14,7 @@ export const usePomodoroComponent = () => {
             console.log("성공!");
         },
         () => {
-            startTimer();
-            console.log("다시시작!");
+            if (option?.RoundRestart) startTimer();
         }
     );
 
