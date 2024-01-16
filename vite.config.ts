@@ -4,6 +4,7 @@ import tsconfigPaths from "vite-tsconfig-paths";
 import federation from "@originjs/vite-plugin-federation";
 
 export default defineConfig({
+  base: "/react-pomodoro/",
   plugins: [
     react(),
     tsconfigPaths(),
